@@ -33,7 +33,6 @@ function BottomNavbar() {
 			bottom="0"
 			zIndex="10"
 			w="100%"
-			bg="red"
 			h="40px"
 			display="flex"
 			justifyContent="flex-end"
