@@ -1,65 +1,66 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-
+import styles from "../styles/Home.module.css";
+import {
+	Box,
+	Avatar,
+	Heading,
+	Flex,
+	Image,
+	Text,
+	Divider,
+	useColorMode,
+} from "@chakra-ui/react";
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+	const { colorMode } = useColorMode();
+	return (
+		<Box>
+			{renderHeader()}
+			<Divider
+				my="20px"
+				borderColor={colorMode === "light" ? "teal.700" : "teal.400"}
+			/>
+			{renderPurpose()}
+		</Box>
+	);
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+	function renderPurpose() {
+		return (
+			<Box w={"100%"} mx="auto">
+				<Heading size="md" fontWeight={500}>
+					Purpose
+				</Heading>
+				<Box my="10px" />
+				<Text>
+					I am a senior Computer Science major at Howard University
+					and this portfolio is to showcase my various projects in the
+					field of computer science. I will give you a closer look to
+					what I do as a Software Engineer and where I get a lot of my
+					inspiration from. Enjoy!
+				</Text>
+			</Box>
+		);
+	}
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+	function renderHeader() {
+		return (
+			<Flex>
+				<Flex flexGrow={1} alignItems="center">
+					<Heading fontWeight={500}>Welcome to my portfolio!</Heading>
+				</Flex>
+				<Flex flexDir="column" alignItems="center">
+					<Image
+						src={"/photo.jpeg"}
+						borderRadius="full"
+						alt="Collins Chikeluba"
+						w="200px"
+						h="200px"
+					/>
+					<Heading size="md">Collins Chikeluba</Heading>
+					<Text>Undergraduate Software Engineer</Text>
+				</Flex>
+			</Flex>
+		);
+	}
 }
+
+const purposeMessage =
+	"I am a senior Computer Science major at Howard University and this portfolio is to showcase my various projects in the field of computer science";
