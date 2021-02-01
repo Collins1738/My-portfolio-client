@@ -19,7 +19,7 @@ export default function Navbar() {
 			top="0"
 			zIndex="10"
 			w="100%"
-			bg={colorMode === "light" ? "teal.700" : "gray.500"}
+			bg={colorMode === "light" ? "teal.700" : "teal.300"}
 			h="80px"
 			px="40px"
 		>
