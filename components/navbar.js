@@ -1,20 +1,29 @@
 import React from "react";
-import {
-	Flex,
-	Spacer,
-	useColorMode,
-	HStack,
-	Box,
-	Text,
-} from "@chakra-ui/react";
+import { Flex, useColorMode, HStack, Box, Text } from "@chakra-ui/react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
-	const { colorMode, toggleColorMode } = useColorMode();
+	const { colorMode } = useColorMode();
+	const { asPath: currentPath } = useRouter();
+	const textStyles = {
+		color: colorMode === "light" ? "white" : "black",
+		_hover: {
+			color: colorMode === "light" ? "yellow.200" : "yellow.700",
+		},
+	};
+
+	const marker = () => {
+		return (
+			<Box
+				border="1px solid"
+				borderColor={colorMode === "light" ? "white" : "black"}
+			/>
+		);
+	};
 
 	return (
 		<Flex
-			as="navbar"
 			pos="fixed"
 			top="0"
 			zIndex="10"
@@ -23,94 +32,56 @@ export default function Navbar() {
 			h="80px"
 			px="40px"
 		>
-			<HStack spacing={2}>
-				<Box w="90px">
+			<HStack justifyContent="space-around" w="800px">
+				<Box>
 					<Link href="/">
 						<a>
-							<Text
-								color={
-									colorMode === "light" ? "white" : "black"
-								}
-							>
-								Home
-							</Text>
+							<Text {...textStyles}>Home</Text>
 						</a>
 					</Link>
+					{currentPath === "/" && marker()}
 				</Box>
-
-				<Box w="90px">
+				<Box>
 					<Link href="/news">
 						<a>
-							<Text
-								color={
-									colorMode === "light" ? "white" : "black"
-								}
-							>
-								News
-							</Text>
+							<Text {...textStyles}>News</Text>
 						</a>
 					</Link>
+					{currentPath === "/news" && marker()}
 				</Box>
-				<Box w="90px">
+				<Box>
 					<Link href="/bio">
 						<a>
-							<Text
-								color={
-									colorMode === "light" ? "white" : "black"
-								}
-							>
-								Bio
-							</Text>
+							<Text {...textStyles}>Bio</Text>
 						</a>
 					</Link>
+					{currentPath === "/bio" && marker()}
 				</Box>
-				<Box w="90px">
+				<Box>
 					<Link href="/usability">
 						<a>
-							<Text
-								color={
-									colorMode === "light" ? "white" : "black"
-								}
-							>
-								Usability
-							</Text>
+							<Text {...textStyles}>Usability</Text>
 						</a>
 					</Link>
+					{currentPath === "/usability" && marker()}
 				</Box>
-				<Box w="90px">
+				<Box>
 					<Link href="/projects">
 						<a>
-							<Text
-								color={
-									colorMode === "light" ? "white" : "black"
-								}
-							>
-								Projects
-							</Text>
+							<Text {...textStyles}>Projects</Text>
 						</a>
 					</Link>
+					{currentPath === "/projects" && marker()}
 				</Box>
-				<Box w="90px">
+				<Box>
 					<Link href="/final-demo">
 						<a>
-							<Text
-								color={
-									colorMode === "light" ? "white" : "black"
-								}
-							>
-								Final Demo
-							</Text>
+							<Text {...textStyles}>Final Demo</Text>
 						</a>
 					</Link>
+					{currentPath === "/final-demo" && marker()}
 				</Box>
 			</HStack>
-
-			<Spacer />
 		</Flex>
 	);
 }
-// <Link>News </Link>
-// 			<Link>Bio</Link>
-// 			<Link>Usability Report</Link>
-// 			<Link>Project Showcasing</Link>
-// 			<Link>Final Demonstration</Link>

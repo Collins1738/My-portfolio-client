@@ -1,7 +1,5 @@
-import styles from "../styles/Home.module.css";
 import {
 	Box,
-	Avatar,
 	Heading,
 	Flex,
 	Image,
@@ -42,10 +40,7 @@ export default function Home() {
 
 	function renderHeader() {
 		return (
-			<Flex>
-				<Flex flexGrow={1} alignItems="center">
-					<Heading fontWeight={500}>Welcome to my portfolio!</Heading>
-				</Flex>
+			<Flex flexDir={["column", "row", "row"]}>
 				<Flex flexDir="column" alignItems="center">
 					<Image
 						src={"/photo.jpeg"}
@@ -57,10 +52,15 @@ export default function Home() {
 					<Heading size="md">Collins Chikeluba</Heading>
 					<Text>Undergraduate Software Engineer</Text>
 				</Flex>
+				<Flex
+					flexGrow={1}
+					alignItems="center"
+					justifyContent="center"
+					py="15px"
+				>
+					<Heading fontWeight={500}>Welcome to my portfolio!</Heading>
+				</Flex>
 			</Flex>
 		);
 	}
 }
-
-const purposeMessage =
-	"I am a senior Computer Science major at Howard University and this portfolio is to showcase my various projects in the field of computer science";

@@ -1,5 +1,4 @@
 import React from "react";
-import Head from "next/head";
 import { Box, useColorMode, Button } from "@chakra-ui/react";
 import Navbar from "./navbar";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
@@ -14,7 +13,7 @@ export default function Layout({ children }) {
 				mt="80px"
 				maxW="800px"
 				mx="auto"
-				p="5px"
+				p="15px"
 				pt="20px"
 			>
 				{children}
