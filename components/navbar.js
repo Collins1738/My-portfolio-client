@@ -7,17 +7,18 @@ export default function Navbar() {
 	const { colorMode } = useColorMode();
 	const { asPath: currentPath } = useRouter();
 	const textStyles = {
-		color: colorMode === "light" ? "white" : "black",
+		color: colorMode === "light" ? "gray.700" : "black",
 		_hover: {
-			color: colorMode === "light" ? "yellow.200" : "yellow.700",
+			color: colorMode === "light" ? "teal.500" : "yellow.700",
 		},
+		fontWeight: 500,
 	};
 
 	const marker = () => {
 		return (
 			<Box
 				border="1px solid"
-				borderColor={colorMode === "light" ? "white" : "black"}
+				borderColor={colorMode === "light" ? "teal.500" : "black"}
 			/>
 		);
 	};
@@ -28,7 +29,7 @@ export default function Navbar() {
 			top="0"
 			zIndex="10"
 			w="100%"
-			bg={colorMode === "light" ? "teal.700" : "teal.300"}
+			bg={colorMode === "light" ? "gray.100" : "teal.300"}
 			h="80px"
 			px="40px"
 		>
