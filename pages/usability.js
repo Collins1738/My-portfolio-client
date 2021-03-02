@@ -58,6 +58,7 @@ export default function Usability() {
 			<Flex
 				justifyContent="space-between"
 				flexDir={["column", "column", "row"]}
+				alignItems="center"
 			>
 				<Image src="/new-site.jpg" {...imageStyles} />
 				<Image src="/new-site2.jpg" {...imageStyles} />
