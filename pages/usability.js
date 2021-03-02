@@ -1,5 +1,14 @@
 import React from "react";
-import { Box, Text, Heading, Image, Flex } from "@chakra-ui/react";
+import {
+	Box,
+	Text,
+	Heading,
+	Image,
+	Flex,
+	Link as ChakraLink,
+} from "@chakra-ui/react";
+import Link from "next/link";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 export default function Usability() {
 	const textStyles = {
@@ -59,9 +68,13 @@ export default function Usability() {
 				thought process behind the new design!
 			</Text>
 			<Box my="20px" />
-			<Text display={["block", "none"]} {...textStyles}>
-				Switch to desktop to view pdf
-			</Text>
+			<Link href="/Collins-Chikeluba-Portfolio-Usability-report.pdf">
+				<a>
+					<ChakraLink display={["block", "none"]} {...textStyles}>
+						View usability report <ExternalLinkIcon />
+					</ChakraLink>
+				</a>
+			</Link>
 			<Box
 				display={["none", "block"]}
 				m="auto"
