@@ -24,7 +24,7 @@ export default function Usability() {
 		mb: "30px",
 		fontSize: "1.8rem",
 		fontWeight: 600,
-		letterSpacing: "1.5px",
+		letterSpacing: "1.3px",
 		maxW: "44rem",
 		textTransform: "uppercase",
 		lineHeight: "1.8",
@@ -71,7 +71,11 @@ export default function Usability() {
 			<Box my="20px" />
 			<Link href="/Collins-Chikeluba-Portfolio-Usability-report.pdf">
 				<a>
-					<ChakraLink display={["block", "none"]} {...textStyles}>
+					<ChakraLink
+						display={["block", "block"]}
+						{...textStyles}
+						color="teal.500"
+					>
 						View usability report <ExternalLinkIcon />
 					</ChakraLink>
 				</a>
