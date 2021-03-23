@@ -75,6 +75,14 @@ export default function Navbar() {
 					{currentPath === "/projects" && marker()}
 				</Box>
 				<Box>
+					<Link href="/writings">
+						<a>
+							<Text {...textStyles}>Writings</Text>
+						</a>
+					</Link>
+					{currentPath === "/writings" && marker()}
+				</Box>
+				<Box>
 					<Link href="/final-demo">
 						<a>
 							<Text {...textStyles}>Final Demo</Text>

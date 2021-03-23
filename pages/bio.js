@@ -13,8 +13,8 @@ export default function BioPage() {
 					src={"/photo.jpeg"}
 					borderRadius="full"
 					alt="Collins Chikeluba"
-					w="150px"
-					h="150px"
+					w="130px"
+					h="130px"
 				/>
 			</Center>
 			<Text
