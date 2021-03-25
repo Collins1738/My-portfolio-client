@@ -10,7 +10,14 @@ import Link from "next/link";
 
 export default function WritingsPage() {
 	return (
-		<Box>
+		<Box
+			maxW="900px"
+			mx="auto"
+			overflow="hidden"
+			bg="primary.background1"
+			borderRadius="5px"
+			p="40px"
+		>
 			<Box maxW="850px" m="auto">
 				{articles.map((article) => {
 					return (

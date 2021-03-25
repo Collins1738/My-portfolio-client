@@ -3,43 +3,52 @@ import { Box, Text, Heading, useColorMode, Image } from "@chakra-ui/react";
 
 export default function News() {
 	return (
-		<Box maxW="68ch" m="auto">
-			{articles.map((article) => {
-				return (
-					<Box key={article.title} mb="100px">
-						<Heading
-							mb="15px"
-							fontSize="1.3rem"
-							fontWeight={700}
-							letterSpacing="1.5px"
-							maxW="60ch"
-							textTransform="uppercase"
-							lineHeight="1.8"
-						>
-							{article.title}
-						</Heading>
-						{article.image && (
-							<Image
-								src={article.image}
-								width="250px"
-								height="250px"
-								flex={1}
-								m="auto"
-								my="15px"
-							/>
-						)}
-						<Text
-							whiteSpace="pre-line"
-							fontSize="1.2rem"
-							fontWeight={400}
-							lineHeight="1.7"
-							maxW="68ch"
-						>
-							{article.body}
-						</Text>
-					</Box>
-				);
-			})}
+		<Box
+			maxW="690px"
+			mx="auto"
+			overflow="hidden"
+			bg="primary.background1"
+			borderRadius="5px"
+			p="40px"
+		>
+			<Box maxW="68ch" m="auto">
+				{articles.map((article) => {
+					return (
+						<Box key={article.title} mb="100px">
+							<Heading
+								mb="15px"
+								fontSize="1.3rem"
+								fontWeight={700}
+								letterSpacing="1.5px"
+								maxW="60ch"
+								textTransform="uppercase"
+								lineHeight="1.8"
+							>
+								{article.title}
+							</Heading>
+							{article.image && (
+								<Image
+									src={article.image}
+									width="250px"
+									height="250px"
+									flex={1}
+									m="auto"
+									my="15px"
+								/>
+							)}
+							<Text
+								whiteSpace="pre-line"
+								fontSize="1.2rem"
+								fontWeight={400}
+								lineHeight="1.7"
+								maxW="68ch"
+							>
+								{article.body}
+							</Text>
+						</Box>
+					);
+				})}
+			</Box>
 		</Box>
 	);
 }

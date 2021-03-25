@@ -7,11 +7,12 @@ export default function Navbar() {
 	const { colorMode } = useColorMode();
 	const { asPath: currentPath } = useRouter();
 	const textStyles = {
-		color: colorMode === "light" ? "gray.700" : "black",
+		color: "white",
 		_hover: {
-			color: colorMode === "light" ? "teal.500" : "yellow.700",
+			color: "teal.200",
 		},
-		fontWeight: 500,
+		fontWeight: 400,
+		fontSize: "1rem",
 	};
 
 	const marker = () => {
@@ -29,8 +30,8 @@ export default function Navbar() {
 			top="0"
 			zIndex="10"
 			w="100%"
-			bg={colorMode === "light" ? "gray.100" : "teal.300"}
-			h="80px"
+			bg={colorMode === "light" ? "primary.navbar" : "teal.300"}
+			h="63px"
 			px="40px"
 		>
 			<HStack justifyContent="space-around" w="800px">
