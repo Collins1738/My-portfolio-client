@@ -272,7 +272,6 @@ export default function Home() {
 		};
 		const textStyles = {
 			fontSize: "1rem",
-			lineSpacing: "116%",
 			fontWeight: 300,
 		};
 		return (

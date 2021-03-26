@@ -33,7 +33,7 @@ export default function Layout({ children }) {
 				<Box>
 					{Array.from({ length: 5 }).map((_) => (
 						<Flex>
-							{Array.from({ length: 5 }).map((_) => (
+							{Array.from({ length: 6 }).map((_) => (
 								<MyImage />
 							))}
 						</Flex>
